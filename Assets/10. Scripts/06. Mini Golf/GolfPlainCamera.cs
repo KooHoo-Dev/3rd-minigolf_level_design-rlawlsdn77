@@ -50,6 +50,13 @@ namespace Study3D.MiniGolf
             trackedPoint = target.position;
         }
 
+        // target이 순간이동 했을 때 Lerp로 끌려가지 않고 바로 위치를 맞춥니다.
+        public void SnapToTarget()
+        {
+            if (target == null) return;
+            trackedPoint = target.position;
+        }
+
         // 모든 Update의 로직이나 값 설정들이 갱신 된 후에
         // 마지막에 카메라의 위치를 갱신하도록 LateUpdate를 사용합니다.
         private void LateUpdate()
